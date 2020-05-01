@@ -11,4 +11,8 @@
     <string name="lastname">Last Name:</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
+    <string name="order">Order</string>
+    <string name="deliver">Deliver</string>
+    <string name="deliver_description">Deliver</string>
+    <string name="order_description">Image for Order</string>
 </resources>

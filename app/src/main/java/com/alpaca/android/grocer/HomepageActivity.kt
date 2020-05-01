@@ -12,7 +12,7 @@ class HomepageActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_homepage)
 
         auth = FirebaseAuth.getInstance()
 
