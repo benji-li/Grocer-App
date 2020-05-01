@@ -138,6 +138,18 @@
         app:layout_constraintStart_toStartOf="@+id/item_name" />
 
     <ImageButton
+        android:id="@+id/last_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:backgroundTint="@color/buttonAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/next_order"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_media_rew" />
+
+    <ImageButton
         android:id="@+id/next_order"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -147,21 +159,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/last_order"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45"
         app:srcCompat="@android:drawable/ic_media_ff" />
-
-    <ImageButton
-        android:id="@+id/last_order"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/buttonAccent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/next_order"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45"
-        app:srcCompat="@android:drawable/ic_media_rew" />
 
     <TextView
         android:id="@+id/order_appear"

@@ -16,7 +16,7 @@
     <string name="deliver_description">Deliver</string>
     <string name="order_description">Image for Order</string>
     <string name="home">Home</string>
-    <string name="my_orders">My Orders:</string>
+    <string name="my_orders">Shopping List:</string>
     <string name="new_order">New Order</string>
     <string name="max_price">Maximum Price Range:</string>
     <string name="delivery_tip">Delivery Tip:</string>
@@ -24,4 +24,6 @@
     <string name="back">Back</string>
     <string name="item_name">Item Name:</string>
     <string name="address">Address:</string>
+    <string name="welcome">Welcome To Grocery!</string>
+    <string name="descrip">The easy way to order and deliver!</string>
 </resources>
