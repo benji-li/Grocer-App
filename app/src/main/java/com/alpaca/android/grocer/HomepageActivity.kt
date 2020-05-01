@@ -30,6 +30,10 @@ class HomepageActivity : AppCompatActivity() {
         orderImage.setOnClickListener {
             orderPage()
         }
+        val deliverImage:ImageView = findViewById(R.id.deliver_image)
+        deliverImage.setOnClickListener {
+            deliverPage()
+        }
     }
 
     private fun orderPage() {
@@ -46,6 +50,11 @@ class HomepageActivity : AppCompatActivity() {
         finish()
     }
 
+    private fun deliverPage() {
+        val intent = Intent(this, DeliverPageActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
     private fun editProfile() {
         val intent = Intent(this,EditProfileActivity::class.java)
         startActivity(intent)

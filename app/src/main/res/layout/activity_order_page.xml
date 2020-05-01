@@ -62,23 +62,11 @@
         app:layout_constraintTop_toBottomOf="@+id/item_name" />
 
     <TextView
-        android:id="@+id/tip_dollar_sign"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto_light"
-        android:text="@string/dollar_sign"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/max_price"
-        app:layout_constraintEnd_toStartOf="@+id/max_price"
-        app:layout_constraintTop_toTopOf="@+id/max_price"
-        app:layout_constraintVertical_bias="0.526" />
-
-    <TextView
         android:id="@+id/max_price_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_light"
-        android:text="@string/max_price"
+        android:text="@string/quantity"
         app:layout_constraintBottom_toTopOf="@+id/max_price"
         app:layout_constraintStart_toStartOf="@+id/max_price" />
 
@@ -137,30 +125,6 @@
         app:layout_constraintBottom_toTopOf="@+id/item_name"
         app:layout_constraintStart_toStartOf="@+id/item_name" />
 
-    <ImageButton
-        android:id="@+id/last_order"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:backgroundTint="@color/buttonAccent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/next_order"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_media_rew" />
-
-    <ImageButton
-        android:id="@+id/next_order"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/buttonAccent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/last_order"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_media_ff" />
-
     <TextView
         android:id="@+id/order_appear"
         android:layout_width="wrap_content"
@@ -217,7 +181,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="1dp"
         android:fontFamily="@font/roboto_medium"
-        android:text="Price:"
+        android:text="Quantity:"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/price_appear"
         app:layout_constraintEnd_toEndOf="@+id/price_appear"

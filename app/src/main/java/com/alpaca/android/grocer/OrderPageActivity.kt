@@ -19,7 +19,6 @@ class OrderPageActivity : AppCompatActivity() {
     private lateinit var deliveryTipLabel:TextView
     private lateinit var maxPrice:EditText
     private lateinit var maxPriceLabel:TextView
-    private lateinit var tipDollarSign:TextView
     private lateinit var priceDollarSign:TextView
     private lateinit var itemName:EditText
     private lateinit var itemNameLabel:TextView
@@ -35,7 +34,6 @@ class OrderPageActivity : AppCompatActivity() {
         deliveryTipLabel = findViewById(R.id.tip_amount_label)
         maxPrice = findViewById(R.id.max_price)
         maxPriceLabel = findViewById(R.id.max_price_label)
-        tipDollarSign = findViewById(R.id.tip_dollar_sign)
         priceDollarSign= findViewById(R.id.maxprice_dollar_sign)
         itemName = findViewById(R.id.item_name)
         itemNameLabel = findViewById(R.id.item_name_label)
@@ -117,7 +115,6 @@ class OrderPageActivity : AppCompatActivity() {
         deliveryTipLabel.visibility = View.VISIBLE
         maxPrice.visibility = View.VISIBLE
         maxPriceLabel.visibility = View.VISIBLE
-        tipDollarSign.visibility = View.VISIBLE
         priceDollarSign.visibility=View.VISIBLE
         itemName.visibility=View.VISIBLE
         itemNameLabel.visibility=View.VISIBLE
@@ -127,7 +124,6 @@ class OrderPageActivity : AppCompatActivity() {
         deliveryTipLabel.visibility = View.GONE
         maxPrice.visibility = View.GONE
         maxPriceLabel.visibility = View.GONE
-        tipDollarSign.visibility = View.GONE
         priceDollarSign.visibility=View.GONE
         itemName.visibility=View.GONE
         itemNameLabel.visibility=View.GONE
