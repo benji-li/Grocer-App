@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    tools:context=".OrderPageActivity">
+
+    <TextView
+        android:id="@+id/my_orders_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="@string/my_orders"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.109"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.050000012" />
+
+    <Button
+        android:id="@+id/new_order"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:backgroundTint="@color/buttonAccent"
+        android:fontFamily="@font/roboto_light"
+        android:text="@string/new_order"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <EditText
+        android:id="@+id/tip_amount"
+        android:layout_width="147dp"
+        android:layout_height="51dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/new_order"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.845"
+        app:layout_constraintStart_toEndOf="@+id/max_price"
+        app:layout_constraintTop_toBottomOf="@+id/item_name" />
+
+    <EditText
+        android:id="@+id/max_price"
+        android:layout_width="144dp"
+        android:layout_height="51dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/new_order"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.097"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_name" />
+
+    <TextView
+        android:id="@+id/tip_dollar_sign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="@string/dollar_sign"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/max_price"
+        app:layout_constraintEnd_toStartOf="@+id/max_price"
+        app:layout_constraintTop_toTopOf="@+id/max_price"
+        app:layout_constraintVertical_bias="0.526" />
+
+    <TextView
+        android:id="@+id/max_price_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="@string/max_price"
+        app:layout_constraintBottom_toTopOf="@+id/max_price"
+        app:layout_constraintStart_toStartOf="@+id/max_price" />
+
+    <TextView
+        android:id="@+id/tip_amount_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="@string/delivery_tip"
+        app:layout_constraintBottom_toTopOf="@+id/tip_amount"
+        app:layout_constraintStart_toStartOf="@+id/tip_amount" />
+
+    <TextView
+        android:id="@+id/maxprice_dollar_sign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="@string/dollar_sign"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tip_amount"
+        app:layout_constraintEnd_toStartOf="@+id/tip_amount"
+        app:layout_constraintTop_toTopOf="@+id/tip_amount" />
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/buttonAccent"
+        android:fontFamily="@font/roboto_light"
+        android:text="@string/back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/my_orders_text"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.050000012" />
+
+    <EditText
+        android:id="@+id/item_name"
+        android:layout_width="345dp"
+        android:layout_height="54dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/new_order"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.76" />
+
+    <TextView
+        android:id="@+id/item_name_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="@string/item_name"
+        app:layout_constraintBottom_toTopOf="@+id/item_name"
+        app:layout_constraintStart_toStartOf="@+id/item_name" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

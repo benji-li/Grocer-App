@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 
@@ -25,6 +26,16 @@ class HomepageActivity : AppCompatActivity() {
         profileButton.setOnClickListener {
             editProfile()
         }
+        val orderImage: ImageView = findViewById(R.id.order_image)
+        orderImage.setOnClickListener {
+            orderPage()
+        }
+    }
+
+    private fun orderPage() {
+        val intent = Intent(this, OrderPageActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 
     private fun logOut() {
