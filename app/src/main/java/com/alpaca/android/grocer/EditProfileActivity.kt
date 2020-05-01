@@ -19,12 +19,13 @@ class EditProfileActivity : AppCompatActivity() {
         val cancelButton: Button = findViewById(R.id.cancel_button)
         val firstNameField: EditText = findViewById(R.id.firstname_field)
         val lastNameField: EditText = findViewById(R.id.lastname_field)
+        val addressField: EditText = findViewById(R.id.address_field)
 
         cancelButton.setOnClickListener {
             backToHome()
         }
         saveButton.setOnClickListener {
-            writeName(currentUser,firstNameField.text.toString(),lastNameField.text.toString())
+            writeName(currentUser,firstNameField.text.toString(),lastNameField.text.toString(),addressField.text.toString())
         }
 
         val myRef = database.child(currentUser).child("userInfo")
@@ -34,19 +35,23 @@ class EditProfileActivity : AppCompatActivity() {
                 if (fName != "null") firstNameField.setText(fName)
                 val lName = dataSnapshot.child("lastName").value.toString()
                 if (lName !="null") lastNameField.setText(lName)
+                val address = dataSnapshot.child("address").value.toString()
+                if (address !="null") addressField.setText(address)
             }
 
             override fun onCancelled(error: DatabaseError) {}
         })
 
     }
-    private fun writeName(userId:String, firstName:String,lastName:String) {
+    private fun writeName(userId:String, firstName:String,lastName:String,address:String) {
         val user = database.child(userId).child("userInfo")
         val fName = user.child("firstName")
         val lName = user.child("lastName")
+        val add = user.child("address")
         fName.setValue(firstName)
         lName.setValue(lastName)
-        Toast.makeText(this,"Name updated!",Toast.LENGTH_SHORT).show()
+        add.setValue(address)
+        Toast.makeText(this,"Info updated!",Toast.LENGTH_SHORT).show()
         backToHome()
     }
     private fun backToHome() {

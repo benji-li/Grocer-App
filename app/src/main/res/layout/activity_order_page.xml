@@ -101,6 +101,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/tip_amount"
         app:layout_constraintEnd_toStartOf="@+id/tip_amount"
         app:layout_constraintTop_toTopOf="@+id/tip_amount" />
+
     <Button
         android:id="@+id/back_button"
         android:layout_width="wrap_content"
@@ -135,6 +136,106 @@
         android:text="@string/item_name"
         app:layout_constraintBottom_toTopOf="@+id/item_name"
         app:layout_constraintStart_toStartOf="@+id/item_name" />
+
+    <ImageButton
+        android:id="@+id/next_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/buttonAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/last_order"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45"
+        app:srcCompat="@android:drawable/ic_media_ff" />
+
+    <ImageButton
+        android:id="@+id/last_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/buttonAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/next_order"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45"
+        app:srcCompat="@android:drawable/ic_media_rew" />
+
+    <TextView
+        android:id="@+id/order_appear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="@string/order"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/new_order"
+        app:layout_constraintEnd_toStartOf="@+id/price_appear"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.228" />
+
+    <TextView
+        android:id="@+id/price_appear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="max:"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/tip_appear"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/order_appear"
+        app:layout_constraintTop_toTopOf="@+id/order_appear" />
+
+    <TextView
+        android:id="@+id/tip_appear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="@string/delivery_tip"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView13"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/price_appear"
+        app:layout_constraintStart_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toTopOf="@+id/order_appear" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Item:"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/order_appear"
+        app:layout_constraintEnd_toEndOf="@+id/order_appear"
+        app:layout_constraintStart_toStartOf="@+id/order_appear" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Price:"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/price_appear"
+        app:layout_constraintEnd_toEndOf="@+id/price_appear"
+        app:layout_constraintStart_toStartOf="@+id/price_appear" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Tip:"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tip_appear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintStart_toEndOf="@+id/my_orders_text" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

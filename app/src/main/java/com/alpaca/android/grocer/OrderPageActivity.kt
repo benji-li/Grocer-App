@@ -2,17 +2,17 @@ package com.alpaca.android.grocer
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 import java.util.*
+
 
 class OrderPageActivity : AppCompatActivity() {
     private lateinit var deliveryTip:EditText
@@ -23,7 +23,9 @@ class OrderPageActivity : AppCompatActivity() {
     private lateinit var priceDollarSign:TextView
     private lateinit var itemName:EditText
     private lateinit var itemNameLabel:TextView
-
+    private lateinit var orderLabel:TextView
+    private lateinit var priceLabel:TextView
+    private lateinit var tipLabel:TextView
     private val database: DatabaseReference = FirebaseDatabase.getInstance().reference
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,9 +39,13 @@ class OrderPageActivity : AppCompatActivity() {
         priceDollarSign= findViewById(R.id.maxprice_dollar_sign)
         itemName = findViewById(R.id.item_name)
         itemNameLabel = findViewById(R.id.item_name_label)
+        orderLabel = findViewById(R.id.order_appear)
+        priceLabel = findViewById(R.id.price_appear)
+        tipLabel = findViewById(R.id.tip_appear)
         makeInvisible()
 
         val currentUser = FirebaseAuth.getInstance().currentUser!!.uid
+        orderList(currentUser)
 
         val orderButton:Button= findViewById(R.id.new_order)
         orderButton.setOnClickListener {
@@ -52,6 +58,26 @@ class OrderPageActivity : AppCompatActivity() {
         }
     }
 
+    private fun orderList(currentUser:String) {
+        database.child(currentUser).child("orders")
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    var itemDisplay:String = ""
+                    var priceDisplay:String = ""
+                    var tipDisplay:String = ""
+                    for (snapshot in dataSnapshot.children) {
+                        itemDisplay += snapshot.child("itemName").value.toString() + '\n'
+                        priceDisplay += snapshot.child("maxPrice").value.toString() + '\n'
+                        tipDisplay += snapshot.child("delTip").value.toString() + '\n'
+                    }
+                    orderLabel.text = itemDisplay
+                    priceLabel.text = priceDisplay
+                    tipLabel.text = tipDisplay
+                }
+
+                override fun onCancelled(databaseError: DatabaseError) {}
+            })
+    }
     private fun goBack() {
         val intent = Intent(this,HomepageActivity::class.java)
         startActivity(intent)
@@ -76,6 +102,7 @@ class OrderPageActivity : AppCompatActivity() {
             orderButton.text = "New Order"
             makeInvisible()
             Toast.makeText(this,"Order has been made!",Toast.LENGTH_SHORT).show()
+            orderList(userId)
         }
     }
 
