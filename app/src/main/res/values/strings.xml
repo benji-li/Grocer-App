@@ -15,4 +15,5 @@
     <string name="deliver">Deliver</string>
     <string name="deliver_description">Deliver</string>
     <string name="order_description">Image for Order</string>
+    <string name="home">Home</string>
 </resources>
